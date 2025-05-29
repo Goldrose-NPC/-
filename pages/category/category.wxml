@@ -1,0 +1,28 @@
+<view class="container">
+  <!-- 分类导航 -->
+  <scroll-view scroll-x class="category-nav">
+    <block wx:for="{{categories}}" wx:key="id">
+      <view 
+        class="nav-item {{activeCategory === item.id ? 'active' : ''}}" 
+        bindtap="changeCategory" 
+        data-id="{{item.id}}"
+      >
+        {{item.categoryName}}
+      </view>
+    </block>
+  </scroll-view>
+  
+  <!-- 分类菜品 -->
+  <view class="dish-list">
+    <block wx:for="{{dishes}}" wx:key="id">
+      <view class="dish-item" bindtap="goToDetail" data-id="{{item.id}}">
+        <image src="{{item.dishImage || '/assets/images/default-dish.png'}}" />
+        <view class="dish-info">
+          <text class="dish-name">{{item.dishName}}</text>
+          <text class="dish-price">¥{{item.dishPrice}}</text>
+        </view>
+        <button class="add-btn" bindtap="addToCart" data-id="{{item.id}}">+</button>
+      </view>
+    </block>
+  </view>
+</view>

@@ -1,0 +1,32 @@
+<!-- 搜索栏 -->
+<view class="search-bar">
+  <icon type="search" size="16" color="#999"></icon>
+  <input placeholder="酸辣土豆丝..." placeholder-class="placeholder-style"/>
+</view>
+
+
+<!-- 推荐菜品横向滚动 -->
+<view class="section-title">今日推荐</view>
+<scroll-view scroll-x class="recommend-scroll">
+  <view class="recommend-item" wx:for="{{recommendDishes}}" wx:key="id">
+    <image src="{{item.image}}" mode="aspectFill"></image>
+    <view class="dish-info">
+      <text class="dish-name">{{item.name}}</text>
+      <text class="dish-price">¥{{item.price}}</text>
+      <view><button class="add-btn">+</button></view>
+    </view>
+  </view>
+</scroll-view>
+
+<!-- 全部菜品列表 -->
+<view class="section-title">全部菜品</view>
+<view class="dish-list">
+  <view class="dish-item" wx:for="{{dishes}}" wx:key="id">
+    <image src="{{item.image}}" mode="aspectFill"></image>
+    <view class="dish-info">
+      <text class="dish-name">{{item.name}}</text>
+      <text class="dish-price">¥{{item.price}}</text>
+      <button class="add-btn">+</button>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,39 @@
+<view class="container">
+  <!-- 搜索框 -->
+  <view class="search-bar">
+    <input 
+      placeholder="搜索菜品" 
+      bindinput="onSearchInput" 
+      bindconfirm="onSearchConfirm"
+    />
+    <button class="search-btn" bindtap="onSearchConfirm">搜索</button>
+  </view>
+  
+  <!-- 热门推荐 -->
+  <view class="section-title">热门推荐</view>
+  <scroll-view scroll-x class="hot-list">
+    <block wx:for="{{hotDishes}}" wx:key="id">
+      <view class="hot-item" bindtap="goToDetail" data-id="{{item.id}}">
+        <image src="{{item.dishImage || '/assets/images/default-dish.png'}}" />
+        <text>{{item.dishName}}</text>
+        <text class="price">¥{{item.dishPrice}}</text>
+      </view>
+    </block>
+  </scroll-view>
+  
+  <!-- 全部菜品 -->
+  <view class="section-title">全部菜品</view>
+  <view class="dish-list">
+    <block wx:for="{{dishes}}" wx:key="id">
+      <view class="dish-item" bindtap="goToDetail" data-id="{{item.id}}">
+        <image src="{{item.dishImage || '/assets/images/default-dish.png'}}" />
+        <view class="dish-info">
+          <text class="dish-name">{{item.dishName}}</text>
+          <text class="dish-desc">{{item.dishDesc || '暂无描述'}}</text>
+          <text class="dish-price">¥{{item.dishPrice}}</text>
+        </view>
+        <button class="add-btn" bindtap="addToCart" data-id="{{item.id}}">+</button>
+      </view>
+    </block>
+  </view>
+</view>

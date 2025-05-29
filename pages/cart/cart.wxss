@@ -1,0 +1,108 @@
+page {
+  background-color: #f0f9eb;
+  font-family: 'PingFang SC', sans-serif;
+}
+
+.container {
+  padding: 20rpx;
+  padding-bottom: 120rpx;
+}
+
+.cart-list {
+  margin-bottom: 20rpx;
+}
+
+.cart-item {
+  display: flex;
+  padding: 20rpx;
+  background: white;
+  border-radius: 10rpx;
+  margin-bottom: 20rpx;
+  position: relative;
+}
+
+.cart-item image {
+  width: 160rpx;
+  height: 160rpx;
+  border-radius: 10rpx;
+  margin-right: 20rpx;
+}
+
+.item-info {
+  flex: 1;
+}
+
+.dish-name {
+  font-size: 30rpx;
+  font-weight: bold;
+  margin-bottom: 10rpx;
+}
+
+.dish-price {
+  color: #f40;
+  font-weight: bold;
+  margin-bottom: 20rpx;
+}
+
+.quantity-control {
+  display: flex;
+  align-items: center;
+}
+
+.quantity-control .btn {
+  width: 50rpx;
+  height: 50rpx;
+  line-height: 50rpx;
+  text-align: center;
+  padding: 0;
+  margin: 0;
+  background: #f5f5f5;
+  border-radius: 50%;
+}
+
+.quantity-control .quantity {
+  margin: 0 20rpx;
+  font-size: 28rpx;
+}
+
+.delete-btn {
+  position: absolute;
+  right: 20rpx;
+  bottom: 20rpx;
+  height: 60rpx;
+  line-height: 60rpx;
+  padding: 0 20rpx;
+  background: #ff4d4f;
+  color: white;
+  border-radius: 30rpx;
+  font-size: 26rpx;
+}
+
+.cart-footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100rpx;
+  background: white;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 30rpx;
+  box-shadow: 0 -2rpx 10rpx rgba(0, 0, 0, 0.1);
+}
+
+.total-price {
+  font-size: 32rpx;
+  font-weight: bold;
+  color: #f40;
+}
+
+.checkout-btn {
+  height: 70rpx;
+  line-height: 70rpx;
+  padding: 0 40rpx;
+  background: #07c160;
+  color: white;
+  border-radius: 35rpx;
+}

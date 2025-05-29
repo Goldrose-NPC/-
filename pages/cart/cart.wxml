@@ -1,0 +1,25 @@
+<view class="container">
+  <view class="cart-list">
+    <block wx:for="{{cartItems}}" wx:key="id">
+      <view class="cart-item">
+        <image src="{{item.dish.dishImage || '/assets/images/default-dish.png'}}" />
+        <view class="item-info">
+          <image src="{{item.image}}" mode="aspectFill"></image>
+          <text class="dish-name">{{item.dish.dishName}}</text>
+          <text class="dish-price">¥{{item.dish.dishPrice}}</text>
+          <view class="quantity-control">
+            <button class="btn minus" bindtap="decreaseQuantity" data-id="{{item.id}}">-</button>
+            <text class="quantity">{{item.quantity}}</text>
+            <button class="btn plus" bindtap="increaseQuantity" data-id="{{item.id}}">+</button>
+          </view>
+        </view>
+        <button class="delete-btn" bindtap="removeItem" data-id="{{item.id}}">删除</button>
+      </view>
+    </block>
+  </view>
+  
+  <view class="cart-footer">
+    <text class="total-price">总计: ¥{{totalPrice}}</text>
+    <button class="checkout-btn" bindtap="checkout">结算</button>
+  </view>
+</view>
